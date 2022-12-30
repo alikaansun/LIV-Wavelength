@@ -5,14 +5,8 @@ import numpy as np
 from scipy.interpolate import interp1d
 from sympy import false
 
-#Fix the name affixes for legends, 
-#Add try: expect: for posible errors 
-
-
-#new file format must be set for easier operation on parameters
+#File format
 #PS_f#_Cl_bar#_Sl_Ff_las#
-
-
 
 class spectrum:
     def __init__(self,path):
@@ -38,20 +32,20 @@ class spectrum:
         
         return cframes
 
-    def plotspec(self,title):
+    def plotspec(self):
         fig=plt.figure(figsize=(9,5))
         j=0
         ax = fig.add_subplot(111)
         x=self.frames["x"]
         facecolors = plt.colormaps['viridis_r'](np.linspace(0, 1, self.siz))
         for i in self.frames.columns[1:]:
-            ax.plot(x,self.frames[i]/self.frames[i].max(),color=facecolors[j],label=i)
+            ax.plot(x,self.frames[i]/self.frames[i].max(),color=facecolors[j],label="I="+i)
             j+=1
         ax.set_xlim(850, 960)
         ax.set_ylim([-0.1,1.1])
         ax.set_xlabel("Wavelength (nm)")
         ax.set_ylabel("Intensity (a.u.)")
-        ax.set_title(title)
+        ax.set_title(self.pat)
         plt.legend()
         #fig.colorbar("mappable",cmap='viridis_r',ax=ax)
         plt.show()
@@ -71,7 +65,7 @@ class liv:
         self.info={self.pat:self.getinfo(file)}
         #print(self.info)
         self.allframes={self.pat:self.frames.copy()}
-        self.isjori=0
+        self.isjori=0 #information for function calling, 
 
     def reload(self,path,file):
         self.pat=os.path.join(path,file)
