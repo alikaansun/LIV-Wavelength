@@ -39,6 +39,6 @@ functions can be called to alter data and plot accordingly.
 
 
 #Polysection laser design
-<div style="width:60px ; height:60px">
-![PolySection Laser Concept](/Fig/PS.png?raw=true "")
-<div>
+
+![PolySection Laser Concept](/LIV-Wavelength/Fig/PS.png?raw=true "yes")
+
