@@ -39,6 +39,6 @@ functions can be called to alter data and plot accordingly.
 
 
 #Polysection laser design
+![PS](https://user-images.githubusercontent.com/77810345/210326039-528e99ab-db55-4d55-af22-2a6d7a66c6e0.png)
 
-![PolySection Laser Concept](/LIV-Wavelength/Fig/PS.png?raw=true "yes")
 
